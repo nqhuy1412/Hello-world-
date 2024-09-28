@@ -4,8 +4,8 @@
 #include <string.h>
 
 struct LienLac {
-    char ten[50];
-    char sdt[20];
+    char ten[51];
+    char sdt[21];
 };
 
 typedef struct LienLac LL;
@@ -22,7 +22,7 @@ int LinearSearch(LL danhsach[], int n, char k[]) {
 
 int main() {
     FILE* file;
-    LL Ds[50];
+    LL Ds[51];
     int solienlac = 0;
 
     file = fopen("DanhBa.txt", "r");
@@ -40,7 +40,7 @@ int main() {
     }
     fclose(file);
 
-    char k[50];
+    char k[51];
     printf("Nhap ten lien lac can tim: ");
     fgets(k, sizeof(k), stdin);
     k[strcspn(k, "\n")] = '\0';

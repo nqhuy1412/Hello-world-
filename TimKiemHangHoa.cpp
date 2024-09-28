@@ -5,7 +5,7 @@
 #include <string.h>
 
 struct HangHoa {
-    char ten[20];
+    char ten[21];
     int soluong;
 };
 
@@ -22,7 +22,7 @@ int LinearSearch(HH Ds[], int n, char k[]) {    // k là hàng hóa cần tìm
 
 int main() {
     FILE* file;
-    HH Ds[50];
+    HH Ds[51];
     int soluonghanghoa = 0;
     file = fopen("KhoHang.txt", "r");
     if (file == NULL) {
@@ -32,21 +32,21 @@ int main() {
 
     while (fscanf(file, "%s %d", Ds[soluonghanghoa].ten, &Ds[soluonghanghoa].soluong) == 2) {
         soluonghanghoa++;
-        if (soluonghanghoa >= 49) {
+        if (soluonghanghoa >= 50) {
             printf("Kho hang qua lon, khong the doc them.\n");
             break;
         }
     }
     fclose(file);
 
-    char k[50];
+    char k[51];
     printf("Nhap ten hang hoa can tim: ");
     fgets(k, sizeof(k), stdin);   //sizeof(hangcantim) có thể thay = 99
     k[strcspn(k, "\n")] = '\0';//gets
 
-    int vitri = LinearSearch(Ds, soluonghanghoa,k);
-    if (vitri != -1) {
-        printf("Hang hoa '%s' co ton tai trong kho voi so luong: %d\n", Ds[vitri].ten, Ds[vitri].soluong);
+    int kp = LinearSearch(Ds, soluonghanghoa,k);
+    if (kp != -1) {
+        printf("Hang hoa '%s' co ton tai trong kho voi so luong: %d\n", Ds[kp].ten, Ds[kp].soluong);
     }
     else {
         printf("Hang hoa '%s' khong ton tai trong kho.\n", k);

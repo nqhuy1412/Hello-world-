@@ -33,7 +33,7 @@ int main() {
     while (fscanf(file, "%s %d", Ds[soluonghanghoa].ten, &Ds[soluonghanghoa].soluong) == 2) {
         soluonghanghoa++;
         if (soluonghanghoa >= 50) {
-            printf("Kho hang qua lon, khong the doc them.\n");
+            printf("Kho hang khong the doc them.\n");
             break;
         }
     }

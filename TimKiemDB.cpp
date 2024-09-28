@@ -31,10 +31,10 @@ int main() {
         return 1;
     }
 
-    while (fscanf(file, "%49s %19s", Ds[solienlac].ten, Ds[solienlac].sdt) == 2) {
+    while (fscanf(file, "%50s %20s", Ds[solienlac].ten, Ds[solienlac].sdt) == 2) {
         solienlac++;
         if (solienlac >= 100) {
-            printf("Danh ba qua lon, khong the doc them.\n");
+            printf("Danh ba khong the doc them.\n");
             break;
         }
     }
@@ -45,9 +45,9 @@ int main() {
     fgets(k, sizeof(k), stdin);
     k[strcspn(k, "\n")] = '\0';
 
-    int vitri = LinearSearch(Ds, solienlac, k);
-    if (vitri != -1) {
-        printf("Lien lac '%s' co so dien thoai: %s\n", Ds[vitri].ten, Ds[vitri].sdt);
+    int kp = LinearSearch(Ds, solienlac, k);
+    if (kp != -1) {
+        printf("Lien lac '%s' co so dien thoai: %s\n", Ds[kp].ten, Ds[kp].sdt);
     }
     else {
         printf("Khong tim thay lien lac '%s' trong danh ba.\n", k);
